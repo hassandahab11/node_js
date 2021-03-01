@@ -5,20 +5,33 @@ const app = express();
 
 
 app.listen(8000, () => {
-    console.log("Serveur lancé");
+    console.log("the server ");
 })
 
-app.get("/authers/:id", (request, response)=>{
-    switch(request.params.id){
-        case "1":response.send("Lawrence Nowell, UK");
-        break;
-        case "2":response.send("William Shakespeare, UK");
-        break;
-        case "3": response.send("Charles Dickens, US");
-        break;
-        case "4": response.send("OScar Wilde, UK");
-        break;
-        default:
-             response.send("ecrivant non existente");
-    }
-})
+
+// Ex 01
+const authers = [
+    "Lawrence Nowell, UK",
+    "William Shakespeare, UK",
+    "Charles Dickens, US",
+    "Oscar Wilde, UK"
+  ]
+  app.get("/authers/:id", (request, response) => {
+   response.send(authers[request.params.id])
+  })
+
+// Ex 02
+  const authersBks= [
+    "Beowulf",
+    "Hamlet, Othello, Romeo and Juliet, MacBeth",
+    "Oliver Twist, A Christmas Carol",
+    "The Picture of Dorian Gray, The Importance of Being Earnest"
+  ]
+  app.get("/authers/books/:id", (request, response) => {
+    response.send(authersBks[request.params.id])
+   })
+
+
+
+  
+  
