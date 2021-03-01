@@ -30,7 +30,10 @@ const authers = [
   app.get("/authers/books/:id", (request, response) => {
     response.send(authersBks[request.params.id])
    })
-
+// Ex 03
+   app.get("/cars/", (req, res) => {
+    res.send("ERROR");
+});
 
 
   
