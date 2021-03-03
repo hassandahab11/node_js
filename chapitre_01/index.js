@@ -5,7 +5,7 @@ const app = express();
 
 
 app.listen(8000, () => {
-    console.log("the server ");
+    console.log("the server is lanched");
 })
 
 
@@ -35,6 +35,6 @@ const authers = [
     res.send("ERROR");
 });
 
+// Ex 04
 
-  
   
